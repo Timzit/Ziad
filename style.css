@@ -1,0 +1,169 @@
+/* Réinitialisation basique */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color:#00529C;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Mode sombre */
+body.dark-mode {
+    background-color: #022646;
+    color: #ffffff;
+}
+body.dark-mode   .card-container{background-color: #3c4247;}
+  /* Corps de la page */
+  body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Container principal de la carte */
+  .card-container {
+    background-color: #fff;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    
+  }
+  
+  /* En-tête de la carte : photo + nom */
+  .card-header {
+    margin-bottom: 20px;
+  }
+  .header-top {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .card-logo {
+    width: 90px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  /* Photo de profil */
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid #00529C;
+  }
+  body.dark-mode .card-header h2{color: #ffffff;}
+  /* Nom et sous-titre */
+  .card-header h2 {
+    font-size: 1.4rem;
+    color: #00529C;
+    margin-bottom: 5px;
+  }
+  body.dark-mode .card-header h2 span{color: #ffffff;}
+  .card-header h2 span {
+    font-size: 1rem;
+    color: #000000;
+    display: block;
+  }
+  
+  .subtitle {
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: #00529C;
+    line-height: 1.4;
+  }
+  body.dark-mode .subtitle1{color: #ffffff;}
+  .subtitle1 {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #000000;
+    line-height: 1.4;
+  }
+
+  .separator {
+    margin: 10px auto;
+    width: 60%; /* Ajuste comme tu veux */
+    border: none;
+    border-top: 2px solid #00529C;
+  }
+  
+  /* Corps de la carte : boutons / liens */
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  body.dark-mode .btn{    background-color: #00529C; 
+    color: #ffffff;}
+  
+  .btn {
+    display: block;
+    text-decoration: none;
+    background-color: #e2e8f0; /* Gris clair */
+    color: #00529C;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s;
+    text-align: center;
+    font-size: 1rem;
+    
+    border: #00529C ;
+  }
+  
+  .btn:hover {
+    background-color: #a7c2e2; /* Gris un peu plus foncé */
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .profile-photo {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .card-header h2 {
+      font-size: 1.2rem;
+    }
+  
+    .btn {
+      font-size: 0.95rem;
+    }
+  }
+  .btn:last-child {
+    background-color: #00529C;/* Vert */
+    color: #fff;
+  }
+  
+  .btn:last-child:hover {
+    background-color: #388e3c;
+  }
+/* Mode clair par défaut */
+
+
+/* Style du bouton */
+.theme-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.2);
+}
+    
