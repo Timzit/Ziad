@@ -19,7 +19,7 @@ const translations = {
         langIcon: "🌐"
     },
     en: {
-        jobTitle: "Traveling Technical Sales Representative",
+        jobTitle: "B2B Technical Sales Engineer",
         division: "Industry Division",
         subtitle: "STC CO LLC",
         slogan: '"Your partner in control and measurement"',
