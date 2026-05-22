@@ -1,11 +1,20 @@
 BEGIN:VCARD
-VERSION:3.0
-FN:Zied Souiher
-ORG:Sarl STC CO
-TITLE:technico-commercial
-TEL;WORK;VOICE:+213770176384
-EMAIL:z.souiher@stcco-dz.com
-URL:http://www.stcco-dz.com/
-ADR;WORK:;;79 Lots, Les vergers, Bir Mourad Rais;;;;
-NOTE:Your partner in control and measurement
+VERSION:4.0
+FN:Zied Souhier
+N:Souhier;Zied;;;
+ORG:STC CO
+TITLE:Technico-commercial itinérant
+TITLE;LANGUAGE=en:Traveling Technical Sales Representative
+ROLE:Spécialiste commercial technique
+ROLE;LANGUAGE=en:Technical Sales Specialist
+TEL;TYPE=CELL;PREF=1:+213770176384
+TEL;TYPE=WORK;PREF=2:+21323525243
+EMAIL;TYPE=WORK;PREF=1:z.souhier@stcco-dz.com
+URL;TYPE=WORK:http://www.stcco-dz.com/
+ADR;TYPE=WORK:;;79 Lots, Les vergers;Bir Mourad Rais;Alger;16000;Algérie
+ADR;TYPE=WORK;LANGUAGE=en:;;79 Lots, Les vergers;Bir Mourad Rais;Algiers;16000;Algeria
+NOTE:Partenaire en automatisation et instrumentation industrielle.
+NOTE;LANGUAGE=en:Partner in industrial automation and instrumentation.
+CATEGORIES:Business,Industrial Automation
+REV:20250122T120000Z
 END:VCARD

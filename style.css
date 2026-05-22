@@ -17,17 +17,19 @@ body.dark-mode {
     color: #ffffff;
 }
 body.dark-mode   .card-container{background-color: #3c4247;}
-  /* Corps de la page */
-  body {
+
+/* Corps de la page */
+body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+    position: relative;
+}
 
-  /* Container principal de la carte */
-  .card-container {
+/* Container principal de la carte */
+.card-container {
     background-color: #fff;
     width: 90%;
     max-width: 400px;
@@ -36,80 +38,97 @@ body.dark-mode   .card-container{background-color: #3c4247;}
     overflow: hidden;
     text-align: center;
     padding: 20px;
-    
-  }
-  
-  /* En-tête de la carte : photo + nom */
-  .card-header {
+}
+
+/* En-tête de la carte : photo + nom */
+.card-header {
     margin-bottom: 20px;
-  }
-  .header-top {
+}
+.header-top {
     display: flex;
     justify-content: flex-end;
-  }
-  
-  .card-logo {
+}
+
+.card-logo {
     width: 90px;
     height: auto;
     margin-bottom: 10px;
-  }
-  /* Photo de profil */
-  .profile-photo {
-    width: 120px;
-    height: 120px;
+}
+@keyframes flipWithPause {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+}
+
+.logo-wrapper {
+    display: inline-block;
+    animation: flipWithPause 10s ease-in-out infinite;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Photo de profil */
+.profile-photo {
+    width:  200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 15px;
-    border: 2px solid #00529C;
-  }
-  body.dark-mode .card-header h2{color: #ffffff;}
-  /* Nom et sous-titre */
-  .card-header h2 {
+    border: 3px solid #00529C;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+body.dark-mode .card-header h2{color: #ffffff;}
+
+/* Nom et sous-titre */
+.card-header h2 {
     font-size: 1.4rem;
     color: #00529C;
     margin-bottom: 5px;
-  }
-  body.dark-mode .card-header h2 span{color: #ffffff;}
-  .card-header h2 span {
-    font-size: 1rem;
+}
+body.dark-mode .card-header h2 span{color: #ffffff;}
+.card-header h2 span {
+    font-size: 0.85rem;
     color: #000000;
     display: block;
-  }
-  
-  .subtitle {
+    margin-top: 10px;
+}
+
+.subtitle {
     font-size: 1.0rem;
     font-weight: bold;
     color: #00529C;
     line-height: 1.4;
-  }
-  body.dark-mode .subtitle1{color: #ffffff;}
-  .subtitle1 {
+}
+body.dark-mode .subtitle1{color: #ffffff;}
+.subtitle1 {
     font-size: 0.7rem;
     font-weight: bold;
     color: #000000;
     line-height: 1.4;
-  }
+}
 
-  .separator {
+.separator {
     margin: 10px auto;
-    width: 60%; /* Ajuste comme tu veux */
+    width: 60%;
     border: none;
-    border-top: 2px solid #00529C;
-  }
-  
-  /* Corps de la carte : boutons / liens */
-  .card-body {
+    border-top: 2px solid #f68e38;
+}
+
+/* Corps de la carte : boutons / liens */
+.card-body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
-  body.dark-mode .btn{    background-color: #00529C; 
+}
+body.dark-mode .btn{    background-color: #00529C; 
     color: #ffffff;}
-  
-  .btn {
+
+.btn {
     display: block;
     text-decoration: none;
-    background-color: #e2e8f0; /* Gris clair */
+    background-color: #e2e8f0;
     color: #00529C;
     padding: 12px;
     border-radius: 5px;
@@ -117,16 +136,15 @@ body.dark-mode   .card-container{background-color: #3c4247;}
     transition: background 0.3s;
     text-align: center;
     font-size: 1rem;
-    
     border: #00529C ;
-  }
-  
-  .btn:hover {
-    background-color: #a7c2e2; /* Gris un peu plus foncé */
-  }
-  
-  /* Responsive */
-  @media (max-width: 480px) {
+}
+
+.btn:hover {
+    background-color: #a7c2e2;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
     .profile-photo {
       width: 100px;
       height: 100px;
@@ -139,31 +157,176 @@ body.dark-mode   .card-container{background-color: #3c4247;}
     .btn {
       font-size: 0.95rem;
     }
-  }
-  .btn:last-child {
-    background-color: #00529C;/* Vert */
+}
+.btn:last-child {
+    background-color: #00529C;
     color: #fff;
-  }
-  
-  .btn:last-child:hover {
-    background-color:  #00529C;
-  }
-/* Mode clair par défaut */
+}
 
+ .btn:last-child:hover {
+    background-color: #add8ff;
+}
 
-/* Style du bouton */
-.theme-btn {
+/* Wrapper des boutons */
+.buttons-wrapper {
     position: fixed;
     top: 10px;
     right: 10px;
-    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    z-index: 1000;
+}
+
+/* Bouton thème (soleil/lune) */
+.theme-btn {
+    background: transparent;
     border: none;
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
+    padding: 5px;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .theme-btn:hover {
-    transform: scale(1.2);
+    transform: scale(1.15);
 }
+
+.theme-btn:active {
+    transform: scale(0.95);
+}
+
+/* Bouton langue (icône globe) */
+.lang-btn {
+    background: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding: 3px;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+}
+
+.lang-btn:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.lang-btn:active {
+    transform: scale(0.95);
+}
+
+/* Tooltip personnalisé */
+.theme-btn[title]:hover::after, 
+.lang-btn[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -30px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 9px;
+    white-space: nowrap;
+    font-family: Arial, sans-serif;
+    pointer-events: none;
+    z-index: 1001;
+}
+
+/* Ajustement pour le mode sombre */
+body.dark-mode .theme-btn, 
+body.dark-mode .lang-btn {
+    color: #ffffff;
+}
+
+.brochure-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-brochure {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.btn-download {
+    width: 42px;
+    padding: 0.5em 0;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.card-footer {
+    margin-top: 25px;
+}
+.separator-partners {
+    margin: 30px auto 10px;
+    width: 80%;
+    border: none;
+    border-top: 2px solid #f68e38;
+}
+
+.partners-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #00529C;
+    margin-bottom: 15px;
+}
+
+.footer-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+#tsparticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.text {
+    margin-top: 30px;
+}
+
+/* Version Anglaise */
+body.english .job-title,
+body.english .division-title,
+body.english .subtitle1,
+body.english .description-text,
+body.english .partners-title {
+    transition: all 0.3s ease;
+}
+
+/* Ajustements responsives */
+@media (max-width: 480px) {
+    .theme-btn {
+        font-size: 24px;
+    }
     
+    .lang-btn {
+        font-size: 18px;
+    }
+    
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+}
